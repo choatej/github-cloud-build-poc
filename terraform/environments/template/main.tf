@@ -24,5 +24,5 @@ module "cloud-build" {
     name  = local.repo_name
     owner = local.repo_owner
   }
-  build_file_in_repo = ""
+  build_file_in_repo = local.build_file_in_repo
 }
