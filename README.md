@@ -14,6 +14,7 @@ repositories.
   - [Add a New Cloud Build](#add-a-new-cloud-build)
     - [Run Terraform Commands](#apply-the-terraform-and-set-up-the-new-cloud-build)
   - [Remove a Cloud Build](#remove-a-cloud-build)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -165,6 +166,33 @@ terraform plan -destroy
 ```shell
 terraform destroy
 ```
+
+## Testing
+
+### Testing the Triggers
+To test the Cloud Build configration, you should perform a push to a branch on the repo to ensure the Cloud Build
+triggers as expected.  Next, you should create a PR and ensure that both triggers the build and that the build logs
+are written to the PR.
+
+If the build configuration file can not be found on your branch, the build will fail to start.  You should be able to look
+in Google Logging for something like:  
+`ERROR: (gcloud.builds.submit) HTTPError 400: no build steps were provided; either provide a configuration file or list of steps in the request.`
+
+### Testing the Build Config
+While testing the builds themselves are orthogonal to this project, here are some tips on how you can test them.
+
+**Run a Cloud Build Locally**
+
+*Local Builder* allows you to run Cloud Builds on your local machine using both `gcloud` and `docker`.
+While Google has archived its version of [Cloud Build Local](https://github.com/GoogleCloudPlatform/cloud-build-local),
+there is a [community fork](https://github.com/chriseaton/cloud-build-local) that is still currently maintained.  
+It is still as-is so it may not work perfectly. Directions can be found in the project's README.
+
+**Other Possibilities**
+
+There are rumors that you may be able to use Tekton to test cloud builds, but this requires more exploration.
+Other than that you just need to run the builds and see what happens.
+One strategy would be to abstract the steps from the Cloud Build and then run them locally.
 
 ## Contributing
 See [CONTRIBUTING](CONTRIBUTING.md)
