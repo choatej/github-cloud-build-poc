@@ -167,7 +167,7 @@ terraform destroy
 ```
 
 ## Contributing
-See [CONTRIBUTING](CONTRIBUTING)
+See [CONTRIBUTING](CONTRIBUTING.md)
 
 ## License
 See [LICENSE](LICENSE)
