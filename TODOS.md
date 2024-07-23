@@ -10,4 +10,5 @@ that could be differently if the project were to be matured.  Some ideas are:
 - Give the option to seed the GitHub token
 - Handle the IAM stuff
 - Run each build as a separate service account for security
-- 
+- alert on failed builds
+- alert on missing build definition files
