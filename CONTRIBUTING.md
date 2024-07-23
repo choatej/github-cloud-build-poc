@@ -17,10 +17,11 @@ Thank you for your interest in contributing! Here are some guidelines to help yo
 
 ## Pull Request Guidelines
 
-- Run a terraform test locally
+- Run a Terraform test locally
+- Run `terraform fmt` on any changed Terraform files
 - Provide a detailed description of your changes.
 - Include a sample main.tf that you used for testing
-- Include a terraform plan when you run an apply against an existing environment and a clean environment
+- Include a Terraform plan when you run an apply against an existing environment and a clean environment
 
 ## Code of Conduct
 
