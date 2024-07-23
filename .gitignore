@@ -1,0 +1,4 @@
+**/.idea
+scratch
+.terraform
+.terraform-lock.hcl
