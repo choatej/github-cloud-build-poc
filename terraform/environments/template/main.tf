@@ -8,6 +8,7 @@ terraform {
       version = "~> 5.38.0"
     }
   }
+  # update the backend with your desired backend config
   backend "gcs" {
     bucket = "<your bucket here>"
     prefix = "<your bucket folder here>"
